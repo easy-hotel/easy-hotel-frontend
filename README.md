@@ -1,37 +1,28 @@
-# EasyHotelFrontend
-# easy-hotel-backend
+# easy-hotel
+# easy-hotel-frontend
+
+201619020637  Marcelo Campos da Silva - backend e frontend
+
+201719060029  Jander Guimarães Freire  - frontend e documentação
+
+201419040464 Victor Hugo Ota - frontend e documentação
 
 
-201619020637  Marcelo Campos da Silva Desenvolvedor
+Instrução para rodar o projeto:
 
-201719060029  Jander Guimarães Freire  responsável pela documentação
+É necessário ter instalado o MySQL, Node.js e Angular CLI
 
-201419040464 Victor Hugo Ota responsável pela documentação
+Feito a instalação:
+
+1 - execute o comando "dotnet run" na raiz do projeto easy-hotel-backend
+
+2 - execute o comando "ng serve" na raiz do projeto easy-hotel-frontend
+
+3 - acesse a página do projeto via 'http://localhost:4200/'
 
 
+# Backend
+https://github.com/easy-hotel/easy-hotel-backend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Documentação
+https://github.com/easy-hotel/documentacao
