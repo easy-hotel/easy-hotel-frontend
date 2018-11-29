@@ -1,48 +1,14 @@
-  <div class="cadastro col-md-12 col-xs-12 col-sm-12col-lg-12">
+<div class="cadastro col-md-12 col-xs-12 col-sm-12col-lg-12">
   <div class="container">
-    <div class="cadastro-form ">
-      <form class="col-md-4 col-xs-4 col-sm-4	col-lg-4 card-body">
-        <div class="form-group">
-          <label for="nome">Nome</label>
-          <input maxlength="254" ngModel required name="nome" #nome="ngModel" type="text" class="form-control" id="nome">
-          <div class="alert alert-danger" *ngIf="nome.touched && !nome.valid">
-            Nome é obrigatório!
-          </div>
-        </div>
+      <div class="cadastro-form">
+          <form class="col-md-4 col-xs-4 col-sm-4	col-lg-4 card-body">
+              <app-form-input [placeholder]="'Digite o Login'" [label]="'Login'" [control]="cadastroForm.controls.login"></app-form-input>
+              <app-form-input [placeholder]="'Digite o Email'" [label]="'Email'" [control]="cadastroForm.controls.email"></app-form-input>
+              <app-form-input [placeholder]="'Digite a Senha'"  [label]="'Senha'" [control]="cadastroForm.controls.senha"></app-form-input>
+              <app-form-input [placeholder]="'Confirme a Senha'" [label]="'Confirmar Senha'" [control]="cadastroForm.controls.csenha"></app-form-input>
+              <button (click)="cadastrar()" id="cadastrarUsuario" class="btn btn-primary">Cadastrar</button>
+          </form>
+      </div>
 
-        <div class="form-group">
-          <label for="email">E-mail</label>
-          <input maxlength="254" ngModel name="email" #email="ngModel" type="text" class="form-control" id="email"
-            required>
-          <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
-            Email é obrigatório!
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="senha">Senha</label>
-          <input maxlength="254" ngModel name="senha" #senha="ngModel" type="password" class="form-control" id="senha"
-            required>
-          <div class=" alert alert-danger" *ngIf="senha.touched && !senha.valid">
-            Senha é obrigatória!
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="confsenha">Confirmar senha</label>
-          <input maxlength="254" ngModel name="confsenha" #confsenha="ngModel" type="password" class="form-control" id="confsenha"
-            required>
-          <div class=" alert alert-danger" *ngIf="confsenha.touched && !confsenha.valid">
-            Confirmação da senha é obrigatória!
-          </div>
-          <div class=" alert alert-danger" *ngIf="confsenha.touched && (senha.value != confsenha.value)">
-            Senhas diferem!
-          </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-
-      </form>
-    </div>
   </div>
 </div>
