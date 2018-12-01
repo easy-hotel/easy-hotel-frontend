@@ -13,6 +13,6 @@ export class LoginService {
   }
 
   auth(params) {
-    return this.http.post(`/auth`, params);
+    return this.http.post(`/Auth`, params);
   }
 }

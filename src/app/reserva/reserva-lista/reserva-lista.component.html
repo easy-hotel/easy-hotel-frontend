@@ -4,6 +4,9 @@
     <thead>
       <tr>
         <th>Nº Reserva</th>
+        <th>Local</th>
+        <th>Hotel</th>
+        <th>Tipo do Quarto</th>
         <th>Data Check-IN</th>
         <th>Data Check-OUT</th>
         <th>Valor</th>
@@ -13,10 +16,16 @@
     <tbody>
       <tr *ngFor="let reserva of reservas">
         <td>{{reserva.reservaId}}</td>
+        <td>{{reserva.quarto.hotel.cidade}} - {{reserva.quarto.hotel.estado}}</td>
+        <td>{{reserva.quarto.hotel.nome}}</td>
+        <td>{{reserva.quarto.tipoQuarto}}</td>
         <td>{{reserva.dataInicio | date: 'dd/MM/yyyy'}}</td>
         <td>{{reserva.dataFim | date: 'dd/MM/yyyy'}}</td>
         <td>{{reserva.valor | currency: 'BRL'}}</td>
-        <td><a [routerLink]="['/reserva',reserva.reservaId]" class="btn btn-outline-primary btn-sm">Detalhes</a></td>
+        <td>
+          <a [routerLink]="['/reserva',reserva.reservaId]" class="btn btn-outline-primary btn-sm mr-1">Detalhes</a>
+          <button (click)="remove(reserva.reservaId)" class="btn btn-outline-danger btn-sm">Cancelar</button>
+        </td>
       </tr>
     </tbody>
   </table>

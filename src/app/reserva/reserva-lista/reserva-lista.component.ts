@@ -15,4 +15,8 @@ export class ReservaListaComponent implements OnInit {
     this.reservaService.getReservas().subscribe(data => this.reservas = data);
   }
 
+  public remove(reservaId) {
+    this.reservaService.removeReserva(reservaId).subscribe(data => console.log(data));
+  }
+
 }

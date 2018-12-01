@@ -1,12 +1,12 @@
 <div class="login row align-items-center" style="background-image: url(../../assets/img/Travel-to-Rome-Colosseum-ruins-dusk-clouds-lights-Italy_1920x1080.jpg); ">
     <div class="container">
         <div class="row justify-content-center">
-            <form class="col-md-4 card-body">
+            <div class="col-md-4 card-body">
                 <app-form-input [label]="'Login'" [control]="loginForm.controls.nome"></app-form-input>
                 <app-form-input [label]="'Senha'" [control]="loginForm.controls.senha"></app-form-input>
                 <button (click)="logar()" class="btn btn-primary">Entrar</button>
                 <a class="btn btn-primary">Cadastrar</a>
-            </form>
+            </div>
         </div>
     </div>
 </div>

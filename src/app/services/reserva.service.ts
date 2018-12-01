@@ -16,4 +16,8 @@ export class ReservaService {
     return this.http.get(`/reserva/${params}`);
   }
 
+  removeReserva(params) {
+    return this.http.delete(`/reserva/${params}`);
+  }
+
 }
