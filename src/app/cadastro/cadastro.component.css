@@ -1,0 +1,25 @@
+.cadastro{
+  height: 100vmin;
+  display: flex;
+  background-image: url(../../assets/img/Travel-to-Rome-Colosseum-ruins-dusk-clouds-lights-Italy_1920x1080.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+.cadastro-form{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-body{
+  background-color: white;
+}
+#cadastrarUsuario {
+  float: right;
+  justify-content: center;
+}

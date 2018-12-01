@@ -12,8 +12,8 @@ export class QuartoService {
     return this.http.get(`/quarto/${params}`);
   }
 
-  getQuartos() {
-    return this.http.get(`/quarto`);
+  getQuartos(params) {
+    return this.http.get(`/quarto/`, {params: params});
   }
 
   getQuartoByHotel(params) {

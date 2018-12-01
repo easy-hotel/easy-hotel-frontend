@@ -8,6 +8,9 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     SharedModule
+  ],
+  exports: [
+    LoginComponent
   ]
 })
 export class LoginModule { }

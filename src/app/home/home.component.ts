@@ -1,5 +1,7 @@
 import { QuartoService } from './../services/quarto.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +11,23 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   public quartos;
 
-  constructor(private quartoService: QuartoService) { }
+  public quartoForm = this.formBuilder.group({
+    cidade: ['', [Validators.required]],
+    valorMin: ['', [Validators.required]],
+    valorMax: ['', [Validators.required]],
+    classificacao: ['', [Validators.required]]
+  });
+
+  constructor(private quartoService: QuartoService, private formBuilder: FormBuilder,
+    private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    this.quartoService.getQuartos().subscribe(data => this.quartos = data);
+    this.route.queryParams.subscribe(params => {
+      this.quartoService.getQuartos(params).subscribe(data => this.quartos = data);
+    });
   }
 
+  public pesquisar() {
+    this.router.navigate(['/home'], {queryParams: this.quartoForm.value});
+  }
 }

@@ -2,6 +2,8 @@ import { SessionService } from './../services/session.service';
 import { LoginService } from './../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   public loginForm;
-  constructor(private formBuilder: FormBuilder, private loginService: LoginService, private session: SessionService) {
+  constructor(private formBuilder: FormBuilder, private loginService: LoginService, private session: SessionService,
+    private router: Router) {
     this.loginForm = this.formBuilder.group({
       nome: ['', [Validators.required]],
       senha: ['', [Validators.required]]
@@ -25,6 +28,10 @@ export class LoginComponent implements OnInit {
     this.loginService.auth(this.loginForm.value).subscribe(data => {
       this.session.setItem('easy-hotel-auth', data);
     });
+  }
+
+  public cadastrar() {
+    this.router.navigate(['cadastro']);
   }
 
 }

@@ -30,6 +30,15 @@
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       </form>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="btn" (click)="openModal()">Login</button>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
+
+<ng-template #login>
+    <app-login></app-login>
+</ng-template>
