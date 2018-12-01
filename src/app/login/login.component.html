@@ -1,12 +1,6 @@
-<div class="login col-md-12 col-xs-12 col-sm-12col-lg-12">
-    <div class="container">
-        <div class="login-form">
-            <form class="col-md-4 col-xs-4 col-sm-4	col-lg-4 card-body">
-                <app-form-input [label]="'Login'" [control]="loginForm.controls.nome"></app-form-input>
-                <app-form-input [label]="'Senha'" [control]="loginForm.controls.senha"></app-form-input>
-                <button (click)="logar()" id="entrar" class="btn btn-primary">Entrar</button>
-                <button (click)="cadastrar()" id="cadastrar" class="btn btn-primary">Cadastrar</button>
-            </form>
-        </div>
-    </div>
-</div>
+<form>
+    <app-form-input class="col-md-12" [label]="'Login'" [control]="loginForm.controls.nome"></app-form-input>
+    <app-form-input class="col-md-12" [label]="'Senha'" [control]="loginForm.controls.senha"></app-form-input>
+    <button (click)="logar()" id="entrar" class="btn btn-primary">Entrar</button>
+    <button (click)="cadastrar()" id="cadastrar" class="btn btn-primary">Cadastrar</button>
+</form>

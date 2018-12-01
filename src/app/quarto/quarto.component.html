@@ -1,4 +1,22 @@
 <div class="container">
-    {{quarto | json}}
-    <app-calendar></app-calendar>
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <carousel>
+                <slide *ngFor="let imagem of quarto.imagens">
+                    <img src="{{imagem.url}}" alt="first slide" style="display: block; width: 100%;">
+                </slide>
+            </carousel>
+        </div>
+        <div class="col-md-6">
+            <agm-map [latitude]="lat" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md">
+            {{quarto.descricao}}
+        </div>
+    </div>
+    <app-comentario></app-comentario>
 </div>

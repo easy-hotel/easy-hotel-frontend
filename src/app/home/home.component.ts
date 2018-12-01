@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   });
 
   constructor(private quartoService: QuartoService, private formBuilder: FormBuilder,
-    private route: ActivatedRoute, private router: Router) {}
+    private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -28,6 +28,6 @@ export class HomeComponent implements OnInit {
   }
 
   public pesquisar() {
-    this.router.navigate(['/home'], {queryParams: this.quartoForm.value});
+    this.router.navigate(['/home'], { queryParams: this.quartoForm.value });
   }
 }

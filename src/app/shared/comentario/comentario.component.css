@@ -1,0 +1,10 @@
+.card{
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    margin: 0 0 40px 0;
+    box-shadow: 1px 0 5px #f1f1f1;
+}
+
+.nome{
+    margin: 0px;
+}
