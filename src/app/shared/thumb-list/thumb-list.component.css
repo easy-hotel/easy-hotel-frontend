@@ -1,12 +1,22 @@
 .card{
     padding: 0px;
     cursor: pointer;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    margin: 0 0 40px 0;
+    box-shadow: 1px 0 5px #f1f1f1;
 }
 .col-md-3{
     padding: 10px !important;
 }
 
 .card-img-overlay{
-    color: #82afeb;
+    color: #f60;
     /* background-color: #82afeb; */
+}
+
+.value{
+    font-family: futura-pt,sans-serif;
+    color: #f60;
+    font-weight: 600;
 }

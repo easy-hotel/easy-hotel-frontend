@@ -1,21 +1,22 @@
 <div class="card mt-4 mb-4">
-  <div class="card-body">
+  <form class="card-body">
     <div class="d-flex justify-content-between align-items-center">
       <strong class="nome">Marcelo Campos da silva</strong>
-      <app-star-rating [rating]='8' [itemId]='5' [isDisable]="false"></app-star-rating>
+      <app-star-rating [rating]='8' [itemId]='5' [isDisable]="false" (ratingClick)="avaliar($event)"></app-star-rating>
     </div>
-    <textarea class="form-text form-control" rows="3"></textarea>
-    <button class="btn-warning  text-white btn btn-sm mt-2">Avaliar</button>
-  </div>
+    <textarea class="form-text form-control" [formControl]="comentarioForm.controls.texto" rows="3"></textarea>
+    <button class="btn-warning  text-white btn btn-sm mt-2" (click)="comentar()">Avaliar</button>
+  </form>
 </div>
-<div class="card mt-4 mb-4">
+<div class="card mt-4 mb-4" *ngFor="let comentario of comentarios">
   <div class="card-body">
     <div class="d-flex justify-content-between align-items-center">
-      <strong class="nome">Marcelo Campos da silva</strong>
-      <app-star-rating-disable [rating]='4' [itemId]='1' [isDisable]="true"></app-star-rating-disable>
+      <strong class="nome">{{comentario.usuario.nome}}</strong>
+      <app-star-rating-disable [rating]='comentario.avaliacao' [itemId]='comentario.comentarioId' [isDisable]="true"></app-star-rating-disable>
     </div>
-    <p class="card-text">
-      Lorem ipsum dolor sente-se amet, consectetur adipiscing elit. Curabitur pulvinar vel mauris neecconsectetur. Ut
-      vitae accumsan magna. Ut sodales dolor eget leo ultrachones iaculis. Nam fermentum nisl sed eleifend.<p>
+    <p class="card-text">{{comentario.texto}} </p>
+    <span class="data">
+      publicado em {{comentario.data | date:'dd/MM/yyyy HH:mm'}}
+    </span>
   </div>
 </div>

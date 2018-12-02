@@ -13,9 +13,18 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { ComentarioComponent } from './comentario/comentario.component';
 import { StarRatingDisableComponent } from './star-rating-disable/star-rating-disable.component';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
-  declarations: [ThumbListComponent, FormInputComponent, StarRatingComponent, CalendarComponent, ComentarioComponent, StarRatingDisableComponent],
+  declarations: [
+    ThumbListComponent,
+    FormInputComponent,
+    StarRatingComponent,
+    CalendarComponent,
+    ComentarioComponent,
+    StarRatingDisableComponent
+  ],
   imports: [
     CommonModule,
     RatingModule,
@@ -27,8 +36,9 @@ import { StarRatingDisableComponent } from './star-rating-disable/star-rating-di
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
-    })
+    }),
+    ToastrModule.forRoot()
   ],
-  exports: [ThumbListComponent, FormInputComponent, StarRatingComponent, CalendarComponent, ComentarioComponent]
+  exports: [ThumbListComponent, FormInputComponent, StarRatingComponent, CalendarComponent, ComentarioComponent, StarRatingDisableComponent]
 })
 export class SharedModule { }

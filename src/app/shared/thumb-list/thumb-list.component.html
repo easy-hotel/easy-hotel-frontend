@@ -5,8 +5,8 @@
       <img class="card-img-top" src="{{item.imagens[0].url}}" alt="Card image cap" height="200px">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-center">
-          <app-star-rating [rating]='8' [itemId]='5' [isDisable]="true"></app-star-rating>
-          <span class="badge badge-success pull-right">{{item.valor | currency: "BRL" }}</span>
+          <app-star-rating-disable [rating]="item.avaliacaoQuarto" [itemId]="item.quartoId"></app-star-rating-disable>
+          <span class="value">{{item.valor | currency: "BRL" }}</span>
         </div>
         <p class="card-text">{{item.hotel.cidade}} - {{item.hotel.estado}}</p>
         <p class="card-text">{{item.tipoQuarto}}</p>
