@@ -1,21 +1,23 @@
-<div class="container">
-  <div class="card mt-3 mb-3">
-    <div class="card-header">
-      <h2>Pesquise seu quarto aqui!</h2>
+<div class="home col-md-12 col-xs-12 col-sm-12col-lg-12">
+  <div class="container">
+    <div class="card mt-3 mb-3">
+      <div class="card-header">
+        <h2>Pesquise seu quarto aqui!</h2>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <app-form-input class="col-3" [label]="'Cidade'" [control]="quartoForm.controls.cidade"></app-form-input>
+            <app-form-input class="col-3" [label]="'Valor Min'" [control]="quartoForm.controls.valorMin"></app-form-input>
+            <app-form-input class="col-3" [label]="'Valor Max'" [control]="quartoForm.controls.valorMax"></app-form-input>
+            <app-form-input class="col-3" [label]="'Classificacao'" [control]="quartoForm.controls.classificacao"></app-form-input>
+          </div>
+          <div class="pull-right">
+            <button (click)="pesquisar()" id="pesquisar" class="btn btn-primary">Pesquisar</button>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="card-body">
-      <form>
-        <div class="row">
-            <app-form-input class="col-4" [label]="'Cidade'" [control]="quartoForm.controls.cidade"></app-form-input>
-            <app-form-input class="col-4" [label]="'Valor Min'" [control]="quartoForm.controls.valorMin"></app-form-input>
-            <app-form-input class="col-4" [label]="'Valor Max'" [control]="quartoForm.controls.valorMax"></app-form-input>
-            <app-form-input class="col-4" [label]="'Classificacao'" [control]="quartoForm.controls.classificacao"></app-form-input>
-        </div>
-        <div class="pull-right">
-          <button (click)="pesquisar()" id="pesquisar" class="btn btn-primary">Pesquisar</button>
-        </div>
-      </form>
-    </div>
+    <app-thumb-list [items]="quartos"></app-thumb-list>
   </div>
-  <app-thumb-list [items]="quartos"></app-thumb-list>
 </div>
