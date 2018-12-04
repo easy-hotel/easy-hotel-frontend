@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HotelService } from '../services/hotel.service';
 
 @Component({
   selector: 'app-hotel',
@@ -6,15 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hotel.component.css']
 })
 export class HotelComponent implements OnInit {
-  public readonly max = 5;
-  public readonly isReadonly = true;
-  public rate = 4;
+  public hotel;
   lat = 51.678418;
   lng = 7.809007;
 
-  constructor() { }
+  constructor(private hotelService: HotelService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+      this.hotelService.getHotels().subscribe(data => this.hotel = data[0]);
   }
 
 }
