@@ -2,6 +2,8 @@
     background-color: #f7f7f7;
 }
 
-#pesquisar{
+#pesquisar {
     float: right;
+    margin: 5px;
+    justify-content: center;
 }
