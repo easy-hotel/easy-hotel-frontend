@@ -12,11 +12,15 @@ export class ReservaListaComponent implements OnInit {
   constructor(private reservaService: ReservaService) { }
 
   ngOnInit() {
-    this.reservaService.getReservas().subscribe(data => this.reservas = data);
+    this.getReservas();
   }
 
   public remove(reservaId) {
-    this.reservaService.removeReserva(reservaId).subscribe(data => console.log(data));
+    this.reservaService.removeReserva(reservaId).subscribe(() => this.getReservas());
   }
+
+   public getReservas() {
+    this.reservaService.getReservas().subscribe(data => this.reservas = data);
+   }
 
 }
