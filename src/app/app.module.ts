@@ -17,6 +17,8 @@ import { HttpModule } from '@angular/http';
 import { AgmCoreModule } from '@agm/core';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 import { QuartoModule } from './quarto/quarto.module';
+import { CadastrohotelModule } from './cadastrohotel/cadastrohotel.module';
+import { CadastroquartoModule } from './cadastroquarto/cadastroquarto.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { QuartoModule } from './quarto/quarto.module';
     HotelModule,
     QuartoModule,
     CadastroModule,
+    CadastrohotelModule,
+    CadastroquartoModule,
     LoginModule,
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule,

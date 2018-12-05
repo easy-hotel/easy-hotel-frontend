@@ -1,0 +1,13 @@
+<div class="cadastroquarto col-md-12 col-xs-12 col-sm-12col-lg-12">
+  <div class="container">
+      <div class="cadastroquarto-form">
+          <form class="col-md-4 col-xs-4 col-sm-4	col-lg-4 card-body">
+              <ng-select [items]="'hotel'" placeholder="Selecione um hotel" ></ng-select>
+              <app-form-input [placeholder]="'Digite o valor'" [label]="'Valor'" [control]="cadastroquartoForm.controls.valor"></app-form-input>
+              <textarea rows="5"></textarea>
+              <button (click)="cadastrar()" id="cadastrarQuarto" class="btn btn-primary">Cadastrar</button>
+          </form>
+      </div>
+
+  </div>
+</div>

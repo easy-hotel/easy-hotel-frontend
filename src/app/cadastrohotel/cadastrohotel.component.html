@@ -1,0 +1,15 @@
+<div class="cadastrohotel col-md-12 col-xs-12 col-sm-12col-lg-12">
+  <div class="container">
+      <div class="cadastrohotel-form">
+          <form class="col-md-4 col-xs-4 col-sm-4	col-lg-4 card-body">
+              <app-form-input [placeholder]="'Digite o nome do Hotel'" [label]="'Nome'" [control]="cadastrohotelForm.controls.nome"></app-form-input>
+              <app-form-input [placeholder]="'Digite a descricao'" [label]="'Descrição'" [control]="cadastrohotelForm.controls.descricao"></app-form-input>
+              <app-form-input [placeholder]="'Digite o email do Hotel'" [label]="'Email'" [control]="cadastrohotelForm.controls.email"></app-form-input>
+              <app-form-input [placeholder]="'Digite a cidade'" [label]="'Cidade'" [control]="cadastrohotelForm.controls.cidade"></app-form-input>
+              <app-form-input [placeholder]="'Digite o estado'" [label]="'Estado'" [control]="cadastrohotelForm.controls.estado"></app-form-input>
+                <button (click)="cadastrar()" id="cadastrarHotel" class="btn btn-primary">Cadastrar</button>
+          </form>
+      </div>
+
+  </div>
+</div>

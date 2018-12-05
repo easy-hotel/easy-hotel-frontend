@@ -2,6 +2,9 @@ import { QuartoComponent } from './quarto/quarto.component';
 import { ReservaDetalhesComponent } from './reserva/reserva-detalhes/reserva-detalhes.component';
 import { ReservaListaComponent } from './reserva/reserva-lista/reserva-lista.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { CadastrohotelComponent } from './cadastrohotel/cadastrohotel.component';
+import { CadastroquartoComponent } from './cadastroquarto/cadastroquarto.component';
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -15,6 +18,8 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'hotel', component: HotelComponent },
       { path: 'cadastro', component: CadastroComponent },
+      { path: 'cadastrohotel', component: CadastrohotelComponent },
+      { path: 'cadastroquarto', component: CadastroquartoComponent },
       {
         path: 'reserva', children: [
           { path: '', component: ReservaListaComponent },
