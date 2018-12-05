@@ -1,0 +1,13 @@
+.home{
+    height: 100vmin;
+    display: flex;
+    background-image: url(../../assets/img/Travel-to-Rome-Colosseum-ruins-dusk-clouds-lights-Italy_1920x1080.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#pesquisar{
+    float: right;
+}
