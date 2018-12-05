@@ -12,7 +12,7 @@ export class CadastroComponent implements OnInit {
   public cadastroForm;
   constructor(private formBuilder: FormBuilder, private router: Router, private cadastroService: CadastroService) {
     this.cadastroForm = this.formBuilder.group({
-      login: ['', [Validators.required]],
+      nome: ['', [Validators.required]],
       email: ['', [Validators.required]],
       senha: ['', [Validators.required]],
       csenha: ['', [Validators.required]]
