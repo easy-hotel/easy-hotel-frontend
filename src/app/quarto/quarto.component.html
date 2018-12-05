@@ -1,32 +1,46 @@
-<div class="container">
-    <div class="row mt-5">
-        <div class="col-md-8">
-            <carousel>
-                <slide *ngFor="let imagem of quarto.imagens">
-                    <img src="{{imagem.url}}" alt="first slide" style="display: block; width: 100%;">
-                </slide>
-            </carousel>
-        </div>
-        <div class="col-md-4 card">
-            <div class="card-body d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h4 class="card-title">{{quarto.hotel.nome}}</h4>
-                    <app-star-rating-disable [rating]="quarto.avaliacaoQuarto" [itemId]="'quarto'+quarto.quartoId"></app-star-rating-disable>
+<section class="quarto pt-5 pb-5" *ngIf="quarto">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <carousel>
+                    <slide *ngFor="let imagem of quarto.quartoImagems">
+                        <img src="{{imagem.imagem.url}}" alt="first slide" style="display: block; width: 100%;">
+                    </slide>
+                </carousel>
+            </div>
+            <div class="col-md-4 card">
+                <div class="card-body d-flex flex-column">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="card-title">{{quarto.hotel.nome}}</h4>
+                        <app-star-rating-disable [rating]="quarto.avaliacaoQuarto" [itemId]="'quarto'+quarto.quartoId"></app-star-rating-disable>
+                    </div>
+                    <p>Localização: {{quarto.hotel.cidade}} - {{quarto.hotel.estado}}</p>
+                    <p>E-mail: {{quarto.hotel.email}}</p>
+                    <p>Valor Por Noite: {{quarto.valor | currency:'BRL'}}</p>
+                    <p>E-mail: {{quarto.hotel.email}}</p>
+                    <app-form-input class="mt-auto" [label]="'Data de CheckIn:'" [control]="reservaForm.controls.dataInicio"
+                        [type]="typeInput.DATA"></app-form-input>
+                    <app-form-input [label]="'Data de CheckOut:'" [control]="reservaForm.controls.dataFim" [type]="typeInput.DATA"></app-form-input>
+                    <button class="btn btn-success btn-sm btn-block" (click)="fazerReserva()">Fazer Reserva</button>
                 </div>
-                <p>Localização: {{quarto.hotel.cidade}} - {{quarto.hotel.estado}}</p>
-                <p>E-mail: {{quarto.hotel.email}}</p>
-                <p>Valor Por Noite: {{quarto.valor | currency:'BRL'}}</p>
-                <p>E-mail: {{quarto.hotel.email}}</p>
-                <app-form-input class="mt-auto" [label]="'Data de CheckIn:'" [control]=""></app-form-input>
-                <app-form-input [label]="'Data de CheckOut:'" [control]=""></app-form-input>
-                <button class="btn btn-primary btn-sm btn-block">Fazer Reserva</button>
             </div>
         </div>
     </div>
-    <div class="row mt-5">
-        <div class="col-md">
-            {{quarto.descricao}}
+</section>
+
+<section class="comentario pt-5 pb-5" *ngIf="quarto">
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                {{quarto.descricao}}
+            </div>
         </div>
+        <app-comentario [quartoId]="quarto.quartoId"></app-comentario>
     </div>
-    <app-comentario [quartoId]="quarto.quartoId"></app-comentario>
-</div>
+</section>
+
+<section class="outros-quartos pt-5 pb-5" *ngIf="quarto">
+    <div class="container">
+        <app-thumb-list [items]="quartos" [limit]="4"></app-thumb-list>
+    </div>
+</section>

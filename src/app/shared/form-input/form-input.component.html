@@ -3,7 +3,7 @@
     <input *ngIf="type == typeInput.DEFAULT" [formControl]="control" class="form-control" placeholder="{{placeholder}}">
     <input *ngIf="type == typeInput.CPF" [formControl]="control" class="form-control" mask="000.000.000.00">
     <input *ngIf="type == typeInput.CEP" [formControl]="control" class="form-control" mask="00000-000">
-    <input *ngIf="type == typeInput.DATA" [formControl]="control" class="form-control" type="date">
+    <input *ngIf="type == typeInput.DATA" [formControl]="control" class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
     <input *ngIf="type == typeInput.PASSWORD" [formControl]="control" class="form-control" type="password" placeholder="{{placeholder}}">
     <!-- <control-messages [control]="control"></control-messages> -->
 </div>

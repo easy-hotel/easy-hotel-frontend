@@ -13,7 +13,7 @@ const routes: Routes = [
     path: '',
     children: [
       { path: 'home', component: HomeComponent },
-      { path: 'hotel', component: HotelComponent },
+      { path: 'hotel/:hotelId', component: HotelComponent },
       { path: 'cadastro', component: CadastroComponent },
       {
         path: 'reserva', children: [
@@ -21,7 +21,7 @@ const routes: Routes = [
           { path: ':id', component: ReservaDetalhesComponent }
         ]
       },
-      { path: 'quarto/:id', component: QuartoComponent },
+      { path: 'quarto/:quartoId', component: QuartoComponent },
       { path: 'login', component: LoginComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
     ]

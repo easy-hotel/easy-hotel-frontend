@@ -1,8 +1,25 @@
-<div class="row">
+<div class="row" *ngIf="tipo == 'hotel'">
+  <div class="col-md-3" *ngFor="let item of items">
+    <div class="card" [routerLink]="['/hotel', item.hotelId]">
+      <h5 class="card-img-overlay">{{item.nome}}</h5>
+      <img class="card-img-top" src="{{item.imagem.url}}" alt="Card image cap" height="200px">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <app-star-rating-disable [rating]="item.avaliacaoQuarto" [itemId]="item.avaliacao"></app-star-rating-disable>
+          <!-- <span class="value">{{item.valor | currency: "BRL" }}</span> -->
+        </div>
+        <p class="card-text">{{item.cidade}} - {{item.estado}}</p>
+        <p class="card-text">{{item.tipoQuarto}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="tipo == 'quartos'">
   <div class="col-md-3" *ngFor="let item of items">
     <div class="card" [routerLink]="['/quarto', item.quartoId]">
       <h5 class="card-img-overlay">{{item.hotel.nome}}</h5>
-      <img class="card-img-top" src="{{item.imagens[0].url}}" alt="Card image cap" height="200px">
+      <img class="card-img-top" src="{{item.quartoImagems[0].imagem.url}}" alt="Card image cap" height="200px">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-center">
           <app-star-rating-disable [rating]="item.avaliacaoQuarto" [itemId]="item.quartoId"></app-star-rating-disable>

@@ -14,6 +14,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { ComentarioComponent } from './comentario/comentario.component';
 import { StarRatingDisableComponent } from './star-rating-disable/star-rating-disable.component';
 import { ToastrModule } from 'ngx-toastr';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { ToastrModule } from 'ngx-toastr';
     RatingModule,
     FormsModule,
     RouterModule,
+    BsDatepickerModule.forRoot(),
     ReactiveFormsModule,
     NgxMaskModule,
     BrowserAnimationsModule,

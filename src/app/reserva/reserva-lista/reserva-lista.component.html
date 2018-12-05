@@ -17,13 +17,13 @@
       <tr *ngFor="let reserva of reservas">
         <td>{{reserva.reservaId}}</td>
         <td>{{reserva.quarto.hotel.cidade}} - {{reserva.quarto.hotel.estado}}</td>
-        <td>{{reserva.quarto.hotel.nome}}</td>
+        <td><a [routerLink]="['/hotel',reserva.quarto.hotel.hotelId]">{{reserva.quarto.hotel.nome}}</a></td>
         <td>{{reserva.quarto.tipoQuarto}}</td>
         <td>{{reserva.dataInicio | date: 'dd/MM/yyyy'}}</td>
         <td>{{reserva.dataFim | date: 'dd/MM/yyyy'}}</td>
         <td>{{reserva.valor | currency: 'BRL'}}</td>
         <td>
-          <a [routerLink]="['/reserva',reserva.reservaId]" class="btn btn-outline-primary btn-sm mr-1">Detalhes</a>
+          <!-- <a [routerLink]="['/reserva',reserva.reservaId]" class="btn btn-outline-primary btn-sm mr-1">Detalhes</a> -->
           <button (click)="remove(reserva.reservaId)" class="btn btn-outline-danger btn-sm">Cancelar</button>
         </td>
       </tr>

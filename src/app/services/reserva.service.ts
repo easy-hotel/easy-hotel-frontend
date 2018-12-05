@@ -12,12 +12,16 @@ export class ReservaService {
     return this.http.get(`/reserva`);
   }
 
-  getReserva(params) {
-    return this.http.get(`/reserva/${params}`);
+  getReserva(reservaId) {
+    return this.http.get(`/reserva/${reservaId}`);
   }
 
-  removeReserva(params) {
-    return this.http.delete(`/reserva/${params}`);
+  removeReserva(reservaId) {
+    return this.http.delete(`/reserva/${reservaId}`);
+  }
+
+  setReserva(reserva) {
+    return this.http.post(`/reserva`, reserva);
   }
 
 }

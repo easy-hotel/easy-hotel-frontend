@@ -7,6 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ThumbListComponent implements OnInit {
   @Input() items;
+  @Input() limit;
+  @Input() tipo;
   public readonly max = 5;
   public readonly isReadonly = true;
   public rate = 4;

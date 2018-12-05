@@ -1,3 +1,4 @@
+import { HotelService } from './../services/hotel.service';
 import { QuartoService } from './../services/quarto.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -10,20 +11,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   public quartos;
-
-  public quartoForm = this.formBuilder.group({
-    cidade: ['', [Validators.required]],
-    valorMin: ['', [Validators.required]],
-    valorMax: ['', [Validators.required]],
-    classificacao: ['', [Validators.required]]
-  });
+  public hoteis;
+  public quartoForm;
 
   constructor(private quartoService: QuartoService, private formBuilder: FormBuilder,
-    private route: ActivatedRoute, private router: Router) { }
+    private route: ActivatedRoute, private router: Router, private hotelService: HotelService) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      this.quartoService.getQuartos(params).subscribe(data => this.quartos = data);
+      this.quartoForm = this.formBuilder.group({
+        cidade: ['', [Validators.required]],
+        valorMin: ['', [Validators.required]],
+        valorMax: ['', [Validators.required]],
+        classificacao: ['', [Validators.required]]
+      });
+      this.quartoService.getQuartos(params).subscribe(quartos => this.quartos = quartos);
+      this.hotelService.getHoteis().subscribe(hoteis => this.hoteis = hoteis);
     });
   }
 

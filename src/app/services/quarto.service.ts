@@ -8,15 +8,15 @@ export class QuartoService {
 
   constructor(private http: HttpClient) { }
 
-  getQuarto(params) {
-    return this.http.get(`/quarto/${params}`);
+  getQuarto(quartoId) {
+    return this.http.get(`/quarto/${quartoId}`);
   }
 
   getQuartos(params) {
-    return this.http.get(`/quarto/`, {params: params});
+    return this.http.get(`/quarto/`, { params: params });
   }
 
-  getQuartoByHotel(params) {
-    // return this.http.get(`quarto`);
+  getQuartoByHotel(hotelId) {
+    return this.http.get(`/quarto/hotel/${hotelId}`);
   }
 }
