@@ -8,6 +8,8 @@
     background-size: cover;
 }
 
-#pesquisar{
+#pesquisar {
     float: right;
+    margin: 5px;
+    justify-content: center;
 }
