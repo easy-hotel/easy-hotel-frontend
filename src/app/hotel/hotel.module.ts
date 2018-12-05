@@ -5,8 +5,6 @@ import { HotelComponent } from './hotel.component';
 import { RatingModule, CarouselModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
-import { SharedModule } from '../shared/shared.module';
-
 @NgModule({
   declarations: [HotelComponent],
   imports: [

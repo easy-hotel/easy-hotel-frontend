@@ -1,6 +1,6 @@
 <section class="hotel mt-3 mb-4" *ngIf="quartos">
   <div class="container">
-    <div class="row pt-2">
+    <div class="row pt-2 hotel">
       <div class="col-md-8">
         <carousel>
           <slide *ngFor="let imagem of quartos[0].quartoImagems">
@@ -12,10 +12,11 @@
         <div class="card-body d-flex flex-column">
           <div class="d-flex justify-content-between align-items-center">
             <h4 class="card-title">{{hotel.nome}}</h4>
-            <app-star-rating-disable [rating]="hotel.avaliacaoQuarto" [itemId]="'hotel'+hotel.hotelId"></app-star-rating-disable>
+            <app-star-rating-disable [rating]="hotel.avaliacao" [itemId]="'hotel'+hotel.hotelId"></app-star-rating-disable>
           </div>
           <p>Localização: {{hotel.cidade}} - {{hotel.estado}}</p>
           <p>E-mail: {{hotel.email}}</p>
+          <p>{{hotel.descricao}}</p>
         </div>
       </div>
     </div>

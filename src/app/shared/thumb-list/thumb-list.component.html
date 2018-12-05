@@ -5,7 +5,7 @@
       <img class="card-img-top" src="{{item.imagem.url}}" alt="Card image cap" height="200px">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-center">
-          <app-star-rating-disable [rating]="item.avaliacaoQuarto" [itemId]="item.avaliacao"></app-star-rating-disable>
+          <app-star-rating-disable [rating]="item.avaliacao" [itemId]="item.avaliacao"></app-star-rating-disable>
           <!-- <span class="value">{{item.valor | currency: "BRL" }}</span> -->
         </div>
         <p class="card-text">{{item.cidade}} - {{item.estado}}</p>
